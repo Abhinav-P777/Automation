@@ -5,6 +5,7 @@ export class LoginPage {
   readonly emailInput: Locator;
   readonly passwordInput: Locator;
   readonly signInButton: Locator;
+  readonly successPopup: Locator;
 
   constructor(page: Page) {
     this.page = page;
@@ -12,6 +13,7 @@ export class LoginPage {
     this.emailInput = page.locator('#username');
     this.passwordInput = page.locator('#password');
     this.signInButton = page.getByRole('button', { name: 'Sign In' });
+    this.successPopup = page.getByText('Welcome back!', { exact: true });
   }
 
   /**
